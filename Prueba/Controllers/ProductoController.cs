@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Prueba.Modelos.Repositorio;
 using Prueba.Modelos.Datos;
+using Microsoft.AspNetCore.Cors;
 
 namespace Prueba.Controllers
 {
@@ -36,7 +37,8 @@ namespace Prueba.Controllers
             }
 
             [HttpPost]
-            [ActionName(nameof(CreateProductoAsync))]
+            
+        [ActionName(nameof(CreateProductoAsync))]
             public async Task<ActionResult<Producto>> CreateProductoAsync(Producto producto)
             {
                 await _repositorioProducto.CreateProductoAsync(producto);
